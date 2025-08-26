@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.sp // Added import
 fun App() {
     MaterialTheme {
         var name: String by remember { mutableStateOf("") }
+        var name2: String by remember { mutableStateOf("") }
         Column(
             modifier = Modifier
                 .background(MaterialTheme.colorScheme.primaryContainer)
@@ -33,6 +34,13 @@ fun App() {
                 value = name,
                 onValueChange = {
                     name = it
+                }
+            )
+
+            TextField(
+                value = name2,
+                onValueChange = {
+                    name2 = it
                 }
             )
 
@@ -50,6 +58,13 @@ fun App() {
             AnimatedVisibility(name.isNotEmpty()){
                 Text(
                     text = "Version animada de $name", // Added comma
+                    fontSize = 24.sp // Corrected parameter name
+                )
+            }
+
+            AnimatedVisibility(name2.isNotEmpty()){
+                Text(
+                    text = "Version animada de $name2", // Added comma
                     fontSize = 24.sp // Corrected parameter name
                 )
             }

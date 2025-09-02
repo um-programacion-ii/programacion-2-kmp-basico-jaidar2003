@@ -28,9 +28,7 @@ import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
-
-import kmpbasico.composeapp.generated.resources.Res
-import kmpbasico.composeapp.generated.resources.compose_multiplatform
+import org.basic.project.bottomBar.BottomBarScreen
 
 @Composable
 fun App() {
@@ -242,6 +240,22 @@ class ThirdScreen: Screen{
                         text = "Ir a la segunda página"
                     )
                 }
+                Spacer(
+                    modifier = Modifier.width(20.dp)
+                )
+
+                Button(
+                    onClick = {
+                        navigator.push(
+                            item = BottomBarScreen(),
+                        )
+                    }
+                ){
+                    Text(
+                        text = "Ir a la BottomBar"
+                    )
+                }
+
             }
 
         }
